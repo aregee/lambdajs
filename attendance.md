@@ -8,3 +8,6 @@
 
 ### Adwait Thattey
 - [X] Git 101
+
+### Arpit
+- [X] Git 101
