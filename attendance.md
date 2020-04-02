@@ -8,3 +8,6 @@
 
 ### Adwait Thattey
 - [X] Git 101
+
+### John Doe
+- [X] Git 101
