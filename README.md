@@ -120,8 +120,14 @@ Representing data this way is called...
 * ...y'know, all of computation
 
 ---
+# Learning Resources
+
 [The Universe in a Single Arrow](https://gist.github.com/vakila/e920ba4d5567ddbb1c0e64f17366c77f)
 
 [Lambda Talk](https://glebec.github.io/lambda-talk/)
 
 [JavScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[The birth and death of JavaScript](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript)
+
+[JavaScript at Innovaccer](https://dev.to/aregee/breaking-down-the-last-monolith-micro-frontends-hd4)

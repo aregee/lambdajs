@@ -6,11 +6,11 @@
 - [ ] JavaScript
 
 ### Apoorv Taneja
-- [ ] Git 101 
+- [X] Git 101 
 - [ ] JavaScript
 
 ### Adwait Thattey
 - [X] Git 101
 
-### John Doe
+### Arpit
 - [X] Git 101

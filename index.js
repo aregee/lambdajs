@@ -24,4 +24,4 @@ header('λx.λy.x+y') // x => y => x + y;
 header('(λx.λy.x+y) 5 1') // ?
 
 // demo("Answer", )
-console.log(foo(5)(1))
+// console.log(foo(5)(1))
