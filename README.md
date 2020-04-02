@@ -120,7 +120,7 @@ Representing data this way is called...
 * ...y'know, all of computation
 
 ---
-[The Universe in a Single Arrow]("https://gist.github.com/vakila/e920ba4d5567ddbb1c0e64f17366c77f")
+[The Universe in a Single Arrow](https://gist.github.com/vakila/e920ba4d5567ddbb1c0e64f17366c77f)
 
 [Lambda Talk](https://glebec.github.io/lambda-talk/)
 
