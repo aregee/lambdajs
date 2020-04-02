@@ -9,5 +9,7 @@
 ### Adwait Thattey
 - [X] Git 101
 
-### Arpit
+### John Doe
 - [X] Git 101
+
+### Arpit
