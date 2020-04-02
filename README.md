@@ -126,7 +126,9 @@ Representing data this way is called...
 
 [Lambda Talk](https://glebec.github.io/lambda-talk/)
 
-[JavScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[JavScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[More JavaScript](https://dev.to/emmabostian/how-to-learn-javascript-54i6)
 
 [The birth and death of JavaScript](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript)
 

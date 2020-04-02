@@ -49,9 +49,7 @@ header("### Wait... are you sure these are numbers?")
 
 var toNumber = n => n(i => i + 1)(0);
 
-console.log(toNumber(zero))
-console.log(toNumber(two))
-console.log(toNumber(three))
+// console.log(toNumber(zero))
 
 
 
