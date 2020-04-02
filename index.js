@@ -25,3 +25,34 @@ header('(λx.λy.x+y) 5 1') // ?
 
 // demo("Answer", )
 // console.log(foo(5)(1))
+
+header('Numbers!')
+
+// Counting is fun
+header('0 := λfx.x')
+// var zero = TODO
+header('1 := λfx.fx')
+// var one =  TODO
+header('2 := λfx.f(fx)')
+// var two =  TODO
+
+header('SUCCESSOR')
+
+header('SUCCESSOR := λnfx.f(nfx)')
+
+header('3 := λfx.f(ffx)')
+// var nextn = n => f => x => f(n(f)(x));
+
+// var three = TODO
+
+header("### Wait... are you sure these are numbers?")
+
+var toNumber = n => n(i => i + 1)(0);
+
+console.log(toNumber(zero))
+console.log(toNumber(two))
+console.log(toNumber(three))
+
+
+
+
