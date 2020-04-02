@@ -5,6 +5,9 @@
 - [X] Git 101
 - [ ] JavaScript
 
+### Apoorv Taneja
+- [ ] Git 101 
+- [ ] JavaScript
 
 ### Adwait Thattey
 - [X] Git 101
