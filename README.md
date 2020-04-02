@@ -32,9 +32,26 @@
 ---
 ## Numbers 
 
-What can we count if all we have are functions?
+*What can we count if all we have are functions?*
 
-We can count **function applications** (calls)!
+> Yes, you can define numbers (and indeed, arbitrary data types) inside the lambda calculus. Here's the idea. -[adding numbers in LC](https://stackoverflow.com/questions/29756732/how-would-the-lambda-calculus-add-numbers)
+
+The simplest numbers to work with are the natural numbers: 0, 1, 2, 3, and so on.
+
+Peano Axioms describes this as follows:
+- 0 is a natural number
+- if `n` a natural number, then Sn is a natural number.
+
+S denotes the successor of `n` or `n+1`.
+
+First few Peano natural numbers
+ > 0, S0, SS0, SSS0, and so on - it's a unary representation.
+
+We can represent function applications in lamda calculus, hence, we can easily represent Sn, however the problem is that we don't know how to represent 0 and S themselves.
+
+> TLDR: We can count **function applications** (calls)!
+
+Let's write `x` for the `0` we're given, and `f` for the `S` we're given. Then we can represent the first few numbers as follows:
 
 - zero `'λfx.x'` => `f => x => x`
 - one `'λfx.fx'` => `f => x => f(x)`

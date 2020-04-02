@@ -1,0 +1,23 @@
+{
+  "name": "lamdajs",
+  "version": "1.0.0",
+  "description": "## Lambda (𝛌) Calculus, * Mathematical formalism * Invented by this hero (Alonzo Church) starting 1932: ![Alonzo Church](https://upload.wikimedia.org/wikipedia/en/a/a6/Alonzo_Church.jpg) * Universal model of computation (Turing-complete) (NBD)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aregee/lambdajs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aregee/lambdajs/issues"
+  },
+  "homepage": "https://github.com/aregee/lambdajs#readme",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
+}
