@@ -26,7 +26,7 @@
 --- | --- |  ---
 *making one*<br>*("abstraction")*|  λx.x | `x => x`
  *faking multiple args*          |  λx.λy.x+y | ~~`(x, y) => x + y`~~<br>`x => y => x + y`
-*using one*<br>*("application")* | (λx.λy.x+y) 5 1<br>> 5+1<br>> 6 | `(x => y => x + y)(5)(1)`*<br>*> `5+1`<br>> `6`
+*using one*<br>*("application")* | (λx.λy.x+y) 5 1 <br> 5+1 <br> 6 | `(x => y => x + y)(5)(1)`*<br>*`5+1`<br> `6`
 
 
 ---
@@ -36,9 +36,9 @@ What can we count if all we have are functions?
 
 We can count **function applications** (calls)!
 
-- zero `'λx.x'` => `f => x => x`
-- one `'λ(λx.x).x'` => `f => x => f(x)`
-- two `'λx.x'` => `f => x => f(f(x))`
+- zero `'λfx.x'` => `f => x => x`
+- one `'λfx.fx'` => `f => x => f(x)`
+- two `'λfx.f(fx)'` => `f => x => f(f(x))`
 
 ## Higher Numbers 
 
