@@ -7,4 +7,4 @@
 
 
 ### Adwait Thattey
-- [ ] Git 101
+- [X] Git 101
