@@ -2,7 +2,7 @@
 
 
 ### Rahul Gaur I0109
-- [ ] Git 101 
+- [X] Git 101
 - [ ] JavaScript
 
 
