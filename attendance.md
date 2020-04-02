@@ -2,9 +2,12 @@
 
 
 ### Rahul Gaur I0109
-- [ ] Git 101 
+- [X] Git 101
 - [ ] JavaScript
 
 ### Apoorv Taneja
 - [ ] Git 101 
 - [ ] JavaScript
+
+### Adwait Thattey
+- [X] Git 101
