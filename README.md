@@ -8,7 +8,7 @@
 
 
 
-# Whay is Lamda Calc ?
+# Whay is Lamda Calculus ?
 || ** Lambda function (𝛌) ** | ** Arrow function (`=>`) **
 --- | --- |  ---
 *used for* | thinking | programming
