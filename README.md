@@ -9,6 +9,7 @@
 
 
 # What is Lamda Calculus ?
+
 || ** Lambda function (𝛌) ** | ** Arrow function (`=>`) **
 --- | --- |  ---
 *used for* | thinking | programming
@@ -122,6 +123,11 @@ var falz = thn => els => els;
 Representing data this way is called...
 
 ### Church Encoding
+
+---
+## Repl.it 
+
+<iframe height="400px" width="100%" src="https://repl.it/@aregee/lamdajs?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
 ---
 
