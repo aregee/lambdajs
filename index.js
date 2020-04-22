@@ -47,3 +47,7 @@ header('1 := λfx.fx')
 var one = f => x => f(x);
 
 console.log(toNumber(one));
+
+header('2 := λfx.f(fx)')
+var two = f => x => f(f(x));
+console.log(toNumber(two))
