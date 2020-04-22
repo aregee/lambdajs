@@ -151,7 +151,15 @@ Representing data this way is called...
 
 [JavScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
+[Asynchronous programming](https://eloquentjavascript.net/11_async.html)
+
+[Promises in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
 [More JavaScript](https://dev.to/emmabostian/how-to-learn-javascript-54i6)
+
+[Functional Programming With JavaScript](https://opensource.com/article/17/6/functional-javascript)
+
+[Structure and Interpretation of Computer Programs](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs)
 
 [The birth and death of JavaScript](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript)
 
