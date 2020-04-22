@@ -140,3 +140,6 @@ header("Data Structures - List")
 // Start from pairs of two things
 // Pairs
 var makePair = left => right => f => f(left)(right); // f(l)(r)
+
+var getLeft = pair => pair(troo)
+var getRight = pair => pair(falz)
