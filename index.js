@@ -163,4 +163,17 @@ var prepend = item => list => makePair(falz)(makePair(item)(list));
 // non empty list are composed of nested pairs
 // [3, 2, 1] -> (empty?=faz, (3,(2,(1,nill))))
 
-var singleItemList = prepend(one)(nil); // (falz, (1, nill))
+var singleItemList = prepend(one)(nil);
+// (falz, (1, nill))
+
+var multiItemList = prepend(three)(prepend(two)(singleItemList));
+//(falz, (3,(2,(1,nill))))
+
+// Structural Sharing
+
+// non-empty list has form (empty?=falz, (head, tail));
+
+var first = list => getLeft(getRight(list));
+var rest = list => getRight(getRight(list));
+
+console.log(toNumber(first((rest(multiItemList)))))
