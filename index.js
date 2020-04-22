@@ -98,3 +98,8 @@ var tiered = falz;
 var coffeesToday = ifThenElse(tiered)(six)(one);
 
 header(`Number of coffeesToday ${toNumber(coffeesToday)}`);
+
+header("Logic")
+
+demo("should be false", (falz))
+demo("should be true", (troo))
