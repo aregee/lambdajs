@@ -67,3 +67,5 @@ header("Arithmetic!")
 // Call the function n times, then call it m more times
 // n ie: f => x => x
 header("add := λ n m . λ f x . m (n f x) f ")
+
+var add = n => m => f => x => m(f)(n(f)(x));
