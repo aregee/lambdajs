@@ -88,4 +88,6 @@ console.log(toNumber(six));
 
 header("Booleans and conditonals")
 
-header("<boolean> ? <then do this> : <else do this>")
+header("<boolean> ? <then do this> : <else do this>");
+
+var ifThenElse = bool => thn => els => bool(thn)(els);
