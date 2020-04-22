@@ -136,3 +136,7 @@ header("Data Structures - List")
 //  - Empty (nil)
 //  - One Thing
 //  - Multiple Things
+
+// Start from pairs of two things
+// Pairs
+var makePair = left => right => f => f(left)(right); // f(l)(r)
