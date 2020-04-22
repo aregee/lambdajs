@@ -42,3 +42,8 @@ console.log(zero);
 header("### Wait... are you sure these are numbers?");
 
 console.log(toNumber(zero));
+
+header('1 := λfx.fx')
+var one = f => x => f(x);
+
+console.log(toNumber(one));
