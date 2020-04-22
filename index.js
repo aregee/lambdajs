@@ -93,3 +93,8 @@ header("<boolean> ? <then do this> : <else do this>");
 var ifThenElse = bool => thn => els => bool(thn)(els);
 var troo = thn => els => thn;
 var falz = thn => els => els;
+
+var tiered = falz;
+var coffeesToday = ifThenElse(tiered)(six)(one);
+
+header(`Number of coffeesToday ${toNumber(coffeesToday)}`);
