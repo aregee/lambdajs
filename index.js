@@ -59,3 +59,7 @@ header('3 := λfx.f(ffx)')
 var nextn = n => f => x => f(n(f)(x));
 var three = nextn(two);
 console.log(toNumber(three));
+
+header("Arithmetic!")
+
+// How to Add two numbers ?
