@@ -130,3 +130,9 @@ demo("True and True", and(troo)(troo))
 demo("True and False",and(troo)(falz))
 demo("False and False",and(falz)(falz))
 demo("False and True", and(falz)(troo))
+
+
+header("Data Structures - List")
+//  - Empty (nil)
+//  - One Thing
+//  - Multiple Things
