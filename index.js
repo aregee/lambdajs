@@ -64,3 +64,6 @@ header("Arithmetic!")
 
 // How to Add two numbers ?
 // ie: add two numbers n and m, when numbers are call counters ?
+// Call the function n times, then call it m more times
+// n ie: f => x => x
+header("add := λ n m . λ f x . m (n f x) f ")
