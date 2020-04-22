@@ -51,3 +51,11 @@ console.log(toNumber(one));
 header('2 := λfx.f(fx)')
 var two = f => x => f(f(x));
 console.log(toNumber(two))
+
+header('SUCCESSOR := λnfx.f(nfx)')
+
+header('3 := λfx.f(ffx)')
+
+var nextn = n => f => x => f(n(f)(x));
+var three = nextn(two);
+console.log(toNumber(three));
