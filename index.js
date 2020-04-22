@@ -153,3 +153,14 @@ header("form: (empty?, listContents")
 var isEmpty = getLeft;
 var nil = makePair(troo)(troo);
 demo("List is Empty", isEmpty(nil))
+
+// Add to List
+// To make a new list, we prepend the item to the old list, making new list:
+// (empty?=falz, (newItem, oldList))
+
+var prepend = item => list => makePair(falz)(makePair(item)(list));
+
+// non empty list are composed of nested pairs
+// [3, 2, 1] -> (empty?=faz, (3,(2,(1,nill))))
+
+var singleItemList = prepend(one)(nil); // (falz, (1, nill))
