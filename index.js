@@ -77,3 +77,11 @@ console.log(toNumber(four));
 var five = nextn(four);
 
 console.log(toNumber(add(four)(five)));
+
+header('multiplication')
+// n * m
+var mul = n => m => f => x => m(n(f))(x);
+
+var six = mul(three)(two);
+
+console.log(toNumber(six));
