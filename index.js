@@ -1,18 +1,18 @@
 const errs = []
-const {red} = require('chalk');
-function demo (msg, bool) {
+const { red } = require('chalk');
+function demo(msg, bool) {
 	if (typeof bool === 'function') bool = bool(true)(false);
 	if (!!bool !== bool) throw TypeError('second arg must be boolean or positive number (JS or LC)')
 	console.log(`${bool ? '✅ ' : '❌ '} ${msg}`)
 	if (!bool) errs.push(Error(red(`Spec fail: ${msg} -> ${bool}`)))
 }
 
-function logErrsAndSetExitCode () {
+function logErrsAndSetExitCode() {
 	errs.forEach(err => console.error(err))
 	if (errs.length && process) process.exitCode = 1
 }
 
-function header (str) {
+function header(str) {
 	console.log('\n' + str + '\n')
 }
 
@@ -22,7 +22,7 @@ var toNumber = n => n(i => i + 1)(0);
 header('λx.x')  // 
 let I = x => x;
 
-header('λx.λy.x+y') 
+header('λx.λy.x+y')
 let addTwo = x => y => x + y;
 
 header('(λx.λy.x+y) 5 1') // ?
@@ -116,10 +116,10 @@ var or = A => B => A(A)(B);
 
 
 header("Truth Table - OR")
-demo("True or True",or(troo)(troo))
-demo("True or False",or(troo)(falz))
-demo("False or False",or(falz)(falz))
-demo("False or True",or(falz)(troo))
+demo("True or True", or(troo)(troo))
+demo("True or False", or(troo)(falz))
+demo("False or False", or(falz)(falz))
+demo("False or True", or(falz)(troo))
 
 header('AND')
 
@@ -127,8 +127,8 @@ var and = A => B => A(B)(A);
 
 header("Truth Table - AND")
 demo("True and True", and(troo)(troo))
-demo("True and False",and(troo)(falz))
-demo("False and False",and(falz)(falz))
+demo("True and False", and(troo)(falz))
+demo("False and False", and(falz)(falz))
 demo("False and True", and(falz)(troo))
 
 
@@ -182,4 +182,10 @@ header('FIB := λn.n (λfab.f b (add a b)) bool 0 1')
 
 const FIB = n => n(f => a => b => f(b)(add(a)(b)))(troo)(zero)(one)
 
-demo('FIB 0 = 0', toNumber( FIB(zero) ) === 0)
+demo('FIB 0 = 0', toNumber(FIB(zero)) === 0)
+demo('FIB 1 = 1', toNumber(FIB(one)) === 1)
+demo('FIB 2 = 1', toNumber(FIB(two)) === 1)
+demo('FIB 3 = 2', toNumber(FIB(three)) === 2)
+demo('FIB 4 = 3', toNumber(FIB(four)) === 3)
+demo('FIB 5 = 5', toNumber(FIB(five)) === 5)
+demo('FIB 6 = 8', toNumber(FIB(six)) === 8)
