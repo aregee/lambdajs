@@ -69,3 +69,7 @@ header("Arithmetic!")
 header("add := λ n m . λ f x . m (n f x) f ")
 
 var add = n => m => f => x => m(f)(n(f)(x));
+
+var four = add(two)(two);
+
+console.log(toNumber(four));
