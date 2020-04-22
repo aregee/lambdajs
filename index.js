@@ -28,3 +28,13 @@ let addTwo = x => y => x + y;
 header('(λx.λy.x+y) 5 1') // ?
 
 console.log(addTwo(5)(1))
+
+header('Numbers!')
+// we can count function calls
+
+// Counting is fun
+header('0 := λfx.x')
+
+var zero = f => x => x;
+
+console.log(zero);
