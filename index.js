@@ -146,3 +146,10 @@ var getRight = pair => pair(falz)
 
 console.log(toNumber(getRight(makePair(two)(three))))
 console.log(toNumber(getLeft(makePair(two)(three))))
+
+// List ?
+header("form: (empty?, listContents")
+// A list of form : (empty?, listContents)
+var isEmpty = getLeft;
+var nil = makePair(troo)(troo);
+demo("List is Empty", isEmpty(nil))
