@@ -104,9 +104,14 @@ header("Logic")
 demo("should be false", (falz))
 demo("should be true", (troo))
 
+header('NOT')
+
 var not = bool => thn => els => bool(els)(thn);
 
 demo("Not of False Should be True", not(falz))
 demo("Not of True Should be False", not(troo))
 
+header('OR')
 var or = A => B => A(A)(B);
+
+demo("True or True", or(troo)(troo))
