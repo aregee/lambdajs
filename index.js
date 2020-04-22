@@ -38,3 +38,5 @@ header('0 := λfx.x')
 var zero = f => x => x;
 
 console.log(zero);
+
+header("### Wait... are you sure these are numbers?");
