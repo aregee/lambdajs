@@ -108,3 +108,5 @@ var not = bool => thn => els => bool(els)(thn);
 
 demo("Not of False Should be True", not(falz))
 demo("Not of True Should be False", not(troo))
+
+var or = A => B => A(A)(B);
