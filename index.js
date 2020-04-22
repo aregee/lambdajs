@@ -40,3 +40,5 @@ var zero = f => x => x;
 console.log(zero);
 
 header("### Wait... are you sure these are numbers?");
+
+console.log(toNumber(zero));
