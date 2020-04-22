@@ -177,3 +177,9 @@ var first = list => getLeft(getRight(list));
 var rest = list => getRight(getRight(list));
 
 console.log(toNumber(first((rest(multiItemList)))))
+
+header('FIB := λn.n (λfab.f b (add a b)) bool 0 1')
+
+const FIB = n => n(f => a => b => f(b)(add(a)(b)))(troo)(zero)(one)
+
+demo('FIB 0 = 0', toNumber( FIB(zero) ) === 0)
