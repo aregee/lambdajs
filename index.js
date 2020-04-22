@@ -120,3 +120,13 @@ demo("True or True",or(troo)(troo))
 demo("True or False",or(troo)(falz))
 demo("False or False",or(falz)(falz))
 demo("False or True",or(falz)(troo))
+
+header('AND')
+
+var and = A => B => A(B)(A);
+
+header("Truth Table - AND")
+demo("True and True", and(troo)(troo))
+demo("True and False",and(troo)(falz))
+demo("False and False",and(falz)(falz))
+demo("False and True", and(falz)(troo))
