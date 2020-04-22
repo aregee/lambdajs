@@ -114,4 +114,9 @@ demo("Not of True Should be False", not(troo))
 header('OR')
 var or = A => B => A(A)(B);
 
-demo("True or True", or(troo)(troo))
+
+header("Truth Table - OR")
+demo("True or True",or(troo)(troo))
+demo("True or False",or(troo)(falz))
+demo("False or False",or(falz)(falz))
+demo("False or True",or(falz)(troo))
