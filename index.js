@@ -63,3 +63,4 @@ console.log(toNumber(three));
 header("Arithmetic!")
 
 // How to Add two numbers ?
+// ie: add two numbers n and m, when numbers are call counters ?
