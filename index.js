@@ -85,3 +85,7 @@ var mul = n => m => f => x => m(n(f))(x);
 var six = mul(three)(two);
 
 console.log(toNumber(six));
+
+header("Booleans and conditonals")
+
+header("<boolean> ? <then do this> : <else do this>")
