@@ -143,3 +143,6 @@ var makePair = left => right => f => f(left)(right); // f(l)(r)
 
 var getLeft = pair => pair(troo)
 var getRight = pair => pair(falz)
+
+console.log(toNumber(getRight(makePair(two)(three))))
+console.log(toNumber(getLeft(makePair(two)(three))))
