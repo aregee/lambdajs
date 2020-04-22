@@ -73,3 +73,7 @@ var add = n => m => f => x => m(f)(n(f)(x));
 var four = add(two)(two);
 
 console.log(toNumber(four));
+
+var five = nextn(four);
+
+console.log(toNumber(add(four)(five)));
