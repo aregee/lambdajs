@@ -143,7 +143,7 @@ header("form: (empty?, listContents")
 var isEmpty = getLeft;
 var nil = makePair(troo)(troo);
 
-demo("List is Empty",isEmpty(nil))
+demo("List is Empty", isEmpty(nil))
 
 // Add to List 
 // To make a new list, we prepend the item to the old list, making new list:
