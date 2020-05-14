@@ -20,26 +20,39 @@ function header (str) {
 	console.log('\n' + str + '\n')
 }
 
+// Talk about history of lambda calculus
+
 var toNumber = n => n(i => i + 1)(0);
 
-
 header('I := λx.x')
+// CODE THIS
 const I = x => x
 header('Idiot := I')
 const Idiot = I
 demo('I I = I', I(I) === I)
 
+
+// Introduce LC by [Lambda Talk](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=14)
+
+
 header('Mockingbird := M := ω := λf.ff')
 
-const ω = fn => fn(fn)
-const M = ω
+// CODE THIS:
+const M = fn => fn(fn)
 const Mockingbird = M
+
+// prove 'M I = I I = I',
 demo('M I = I I = I', M(I) === I(I) && I(I) === I)
+
+// What is M M ?
 try {
   M(M)
 } catch (err) {
   demo('M M = M M = M M = ' + err.message, true)
 }
+
+// Touch Base on Combinators https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=76
+
 
 header('Numbers!')
 // we can count function calls
@@ -57,6 +70,9 @@ header('2 := λfx.f(fx)')
 const two = f => x => f(f(x));
 console.log(toNumber(two))
 
+
+// Talk about [Beta Reduction](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=48)
+
 // ### Composition and Point-Free Notation
 
 // Point-free (some joke "point-less") notation means to define a function purely as a combination of other functions, without explicitly writing final arguments. Sometimes this style reveals what a function *is* rather than what explain what it *does*. Other times it can be abused to produce incomprehensible gibberish. Successor is a reasonable candidate for it, however.
@@ -73,7 +89,14 @@ const Bluebird = B
 
 header('3 := λfx.f(ffx)')
 
+header('SUCCESSOR := λnfx.f(nfx)')
+
+const nextn = num => fn => x => fn(num(fn)(x));
+// More about combinators https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=94
+
+
 header('SUCC := λnf.f∘(nf) = λnf.Bf(nf)')
+// CODE THIS: 
 const SUCC = num => fn => B( fn )( num(fn) )
 const three = SUCC(two);
 console.log(toNumber(three));
@@ -94,6 +117,7 @@ header("add := λ n m . λ f x . m (n f x) f ")
 // var add = n => m => f => x => m(f)(n(f)(x));
 
 header('ADD := λab.a(succ)b')
+// CODE THIS:
 const ADD = numA => numB => numA(SUCC)(numB)
 
 // Aha, addition is just the Ath successor of B. Makes sense. For example, `ADD 3 2 = 3 SUCC 2`, which could be read as "thrice successor of twice".
@@ -180,6 +204,8 @@ const coffeesToday = ifThenElse(tiered)(six)(one);
 
 header(`Number of coffeesToday ${toNumber(coffeesToday)}`);
 
+// https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=251
+
 // ### Flipping Arguments
 
 // Another fun way we could have produced F was with the Cardinal combinator. The Cardinal, aka `C`, aka `flip`, takes a binary (two-argument) function, and produces a function with reversed argument order.
@@ -198,6 +224,7 @@ const beersToday = ifThenElse(isUpset)(six)(one);
 header(`Number of Beers Today ${toNumber(beersToday)}`);
 
 
+// Turing <-> LC  https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=105
 
 header("Logic")
 
@@ -296,21 +323,20 @@ var rest = list => getRight(getRight(list));
 console.log(toNumber(first((rest(multiItemList)))))
 
 header('PHI := Φ := λp.PAIR (SND p) (SUCC (SND p))')
-const Φ = oldPair => PAIR(getRight(oldPair))(SUCC(getRight(oldPair)))
-const PHI = Φ
+const PHI = oldPair => PAIR(getRight(oldPair))(SUCC(getRight(oldPair)))
 
 const examplePair0 = V(Fls)(zero) 
 //list prepend(one)(prepend(zero)(nil))
 const examplePair4 = V(Fls)(four)
 //list //prepend(five)(prepend(four)(nil))
 
-demo('Φ <chirp, 0> = <0, 1>',
-  toNumber( getLeft(Φ(examplePair0)) ) === 0 &&
-  toNumber( getRight(Φ(examplePair0)) ) === 1
+demo('Φ <False, 0> = <0, 1>',
+  toNumber( getLeft(PHI(examplePair0)) ) === 0 &&
+  toNumber( getRight(PHI(examplePair0)) ) === 1
 )
-demo('Φ <tweet, 4> = <4, 5>',
-  toNumber( getLeft(Φ(examplePair4)) ) === 4 &&
-  toNumber( getRight(Φ(examplePair4)) ) === 5
+demo('Φ <False, 4> = <4, 5>',
+  toNumber( getLeft(PHI(examplePair4)) ) === 4 &&
+  toNumber( getRight(PHI(examplePair4)) ) === 5
 )
 
 console.log(toNumber(getRight(Φ(examplePair4))))
@@ -318,7 +344,7 @@ console.log(toNumber(getRight(Φ(Φ(examplePair4)))))
 
 
 header('PRED := λn.getLeft (n Φ <0, 0>)')
-const PRED = n => getLeft( n(Φ)(PAIR(zero)(zero)))
+const PRED = n => getLeft( n(PHI)(PAIR(zero)(zero)))
 
 demo('PRED 0 = 0', toNumber( PRED(zero) ) === 0)
 demo('PRED 1 = 0', toNumber( PRED(one) ) === 0)
