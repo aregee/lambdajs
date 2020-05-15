@@ -19,16 +19,19 @@ function logErrsAndSetExitCode () {
 function header (str) {
 	console.log('\n' + str + '\n')
 }
+var toNumber = n => n(i => i + 1)(0);
 
 // Talk about history of lambda calculus
 
-var toNumber = n => n(i => i + 1)(0);
+// Turing <-> LC  https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=105
+
 
 header('I := λx.x')
+
+
 // CODE THIS
 
-header('Idiot := I')
-
+// header('Idiot := I')
 
 // Prove I I = I
 
@@ -37,7 +40,7 @@ header('Idiot := I')
 // Introduce LC by [Lambda Talk](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=14)
 
 
-header('Mockingbird := M := ω := λf.ff')
+// header('Mockingbird := M := ω := λf.ff')
 
 // CODE THIS:
 
@@ -46,18 +49,20 @@ header('Mockingbird := M := ω := λf.ff')
 // What is M M ?
 
 
+
 // Touch Base on Combinators https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=76
 
 
-header('Numbers!')
+// header('Numbers!')
+
 // we can count function calls
 
 // Counting is fun
-header('0 := λfx.x')
+// header('0 := λfx.x')
 
-header('1 := λfx.fx')
+// header('1 := λfx.fx')
 
-header('2 := λfx.f(fx)')
+// header('2 := λfx.f(fx)')
 
 
 // Talk about [Beta Reduction](https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=48)
@@ -68,26 +73,26 @@ header('2 := λfx.f(fx)')
 
 // We are doing n-fold compositions, so let's define an actual `compose` function to help. Composition is often notated as `∘` in infix position: `(f ∘ g) x = f(g(x))`. However, Lambda Calculus only includes prefix position function application. Smullyan named this the Bluebird after Curry's `B` combinator.
 
-header('Bluebird := B := (∘) := compose := λfgx.f(gx)')
+// header('Bluebird := B := (∘) := compose := λfgx.f(gx)')
+
 
 // Now that we have an actual composition function, we can define successor without mentioning the final `x` value argument.
 
 
-header('3 := λfx.f(ffx)')
+// header('3 := λfx.f(ffx)')
 
-header('SUCCESSOR := λnfx.f(nfx)')
+// header('SUCCESSOR := λnfx.f(nfx)')
 
 const nextn = num => fn => x => fn(num(fn)(x));
+// console.log(toNumber(nextn(two)))
+
 // More about combinators https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=94
 
 
-header('SUCC := λnf.f∘(nf) = λnf.Bf(nf)')
+// header('SUCC := λnf.f∘(nf) = λnf.Bf(nf)')
 // CODE THIS: 
 
-
-
 // TODO 3, 4, 5
-
 
 // Arithmetic
 
@@ -96,113 +101,112 @@ header('SUCC := λnf.f∘(nf) = λnf.Bf(nf)')
 // Call the function n times, then call it m more times 
 // n ie: f => x => x
 // five => // f => x => f(f(f(f(f(x)))))) four
-header("add := λ n m . λ f x . m (n f x) f ")
+// /header("add := λ n m . λ f x . m (n f x) f ")
 
-// var add = n => m => f => x => m(f)(n(f)(x));
+var add = n => m => f => x => m(f)(n(f)(x));
 
-header('ADD := λab.a(succ)b')
+// console.log(toNumber(add(two)(four)))
+
+// header('ADD := λab.a(SUCC)b')
+
 // CODE THIS:
 
 
 // Aha, addition is just the Ath successor of B. Makes sense. For example, `ADD 3 2 = 3 SUCC 2`, which could be read as "thrice successor of twice".
-
+// TODO six and seven
 
 // n * m 
-const mul = n => m => f => x => m(n(f))(x);
+const mul = n => m => z => m(n(z));
+// console.log(toNumber(mul(four)(three)))
 
 
+// header('MULT := λab.a∘b = Bluebird')
 
-header('MULT := λab.a∘b = Bluebird')
 
 
 // #### Exponentiation
 
 // Exponentiation is remarkably clean too. When we say 2^3, we are saying "multiply two by itself three times"; or putting it another way, "twice of twice of twice". So for any base and power, the result is the power-fold composition of the base:
 
-header('Thrush := POW := λab.ba')
+// header('Thrush := POW := λab.ba')
+
 
 // QUESTION: What is Answer to everything in Universe ?
-// 2 + (2^3 * (4+1))
+// Answer => 2 + (2^3 * (4+1))
 
 
 
 // #### The Kestrel
 
-header('Kestrel combinator and True and False')
+// header('Kestrel combinator and True and False')
 
-header('T := λxy.x')
-
-
-header('F := λxy.y')
+// header('T := λxy.x')
 
 
-header('Kestrel := K := konst := λk_.k')
+// header('F := λxy.y')
+
+
+// header('Kestrel := K := konst := λk_.k')
+// Code This
+
 // ISZERO used a nice trick to produce a constant. We'll abstract that out. This is the Kestrel combinator `K`, named for the German word "Konstante". The `K` combinator takes a value, and produces a function which ignores its input, always returning the original value. So, `K0` is a function that always returns 0; (`K tweet`) is a function which always returns tweet.
 
-// CODE THIS:
 
-
-header('IS0 := λn.n(KF)T')
+// header('IS0 := λn.n(KF)T')
 
 // CODE THIS: 
-
 
 // `K` should look familiar; it's "alpha-equivalent" to `T`. Alpha-equivalence means it is identical except for variable names, which are arbitrary and don't affect the behavior: `λk_.k = λab.a`.
 
 // #### The Kite
 
-// We can also make `F` out of `K` and `I`. Try tracing through the logic and confirming that `KI = F`. This result is known as the Kite.
+// We can also make `F` out of `K` and `I`. 
+// Try tracing through the logic and confirming that `KI = F`. This result is known as the Kite.
 
-header('         K = T')
-header('Kite := KI = F')
-
+// header('         K = T')
+// header('Kite := KI = F')
 // CODE THIS
 
-header("Booleans and conditonals")
+// header("Conditonals")
 
-header("<boolean> ? <then do this> : <else do this>")
+// header("<boolean> ? <then do this> : <else do this>")
 
-// Code This
+const ifThenElse = bool => thn => els => bool(thn)(els)
 
-// https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=251
+// List of combinators https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=251
 
 // ### Flipping Arguments
 
 // Another fun way we could have produced F was with the Cardinal combinator. The Cardinal, aka `C`, aka `flip`, takes a binary (two-argument) function, and produces a function with reversed argument order.
 
-header('Cardinal := C := flip := λfab.fba')
+// header('Cardinal := C := flip := λfab.fba')
 // CODE THIS
 
 // With the Cardinal, we can derive `F` from the flip of `T`:
 
-header('F = C T')
+// header('F = C T')
 
-// Turing <-> LC  https://speakerdeck.com/glebec/lambda-as-js-or-a-flock-of-functions-combinators-lambda-calculus-and-church-encodings-in-javascript?slide=105
+// Write a program to handle ifElse and select b/w clauses
 
-header("Logic")
+// header("Logic")
 
-// var toBoolean = bool => bool(true)(false)
+// header('NOT := λb.bFT')
 
-
-// var not = bool => thn => els => bool(els)(thn);
-
-header('NOT := λb.bFT')
 
 // demo("Not of False Should be True", NOT(Fls))
 // demo("Not of True Should be False", NOT(Tru))
 
-header('AND := λpq.pqp')
+// header('AND := λpq.pqp')
 
-// const AND = p => q => p(q)(p)
 
-header("Truth Table - AND")
+// header("Truth Table - AND")
 
-header('OR := λpq.ppq')
-// const OR = p => q => p(p)(q)
 
-header("Truth Table - OR")
+// header('OR := λpq.ppq')
 
-header('De Morgan: not (and P Q) = or (not P) (not Q)')
+// header("Truth Table - OR")
+
+// header('De Morgan: not (and P Q) = or (not P) (not Q)')
 
 // function deMorgansLawDemo (p, q) { return NOT(AND(p)(q)) === OR(NOT(p))(NOT(q)) }
 
@@ -213,7 +217,7 @@ header('De Morgan: not (and P Q) = or (not P) (not Q)')
 
 
 // DS ?
-header("Data Structures - List")
+// header("Data Structures - List")
 // - List 
 //  - Empty (nil)
 //  - One Thing
@@ -222,29 +226,32 @@ header("Data Structures - List")
 // Start from pairs of two things 
 // Pairs
 
-header('Vireo := V := PAIR := λabf.fab')
-
-// var makePair = left => right => f => f(left)(right); // f(l)(r)
-
-header('getLeft := λp.p(T)')
+// header('Vireo := V := PAIR := λabf.fab')
 
 
-header('getRight := λp.p(F)')
+// header('getLeft := λp.p(T)')
+
+
+
+// header('getRight := λp.p(F)')
+
+
 
 
 // List ?
-header("form: (empty?, listContents")
+// header("form: (empty?, listContents")
 // A list of form : (empty?, listContents)
-// var isEmpty = getLeft;
 
-// nil = pair(Tru)(Tru);
+// const isEmpty = getLeft;
+
+// const nil = Vireo(Tru)(Tru);
 
 // demo("List is Empty", isEmpty(nil))
 
 // Add to List 
 // To make a new list, we prepend the item to the old list, making new list:
 // (empty?=falz, (newItem, oldList))
-header('prepend := λqp.VFVqp')
+// header('prepend := λqp.V(F)(Vqp)')
 // non empty list are composed of nested pairs
 // [3, 2, 1] -> (empty?=faz, (3,(2,(1,nill))))
 
@@ -255,22 +262,25 @@ header('prepend := λqp.VFVqp')
 // demo("List should not be Empty", NOT(isEmpty(multiItemList)))
 
 // non-empty list has form (empty?=falz, (head, tail));
-header('first := λq.B(λp.pT)(λp.pF)q')
+// header('first := λq.B(λp.pT)(λp.pF)q')
 // Code This
-header('rest := λq.B(λp.pF)(λp.pF)q')
+
+// console.log(toNumber(first(multiItemList)))
+
+// header('rest := λq.B(λp.pF)(λp.pF)q')
 // Code This
+
 
 // console.log(toNumber(first((rest(multiItemList)))))
 
 
 
-header('PHI := Φ := λp.PAIR (SND p) (SUCC (SND p))')
+// header('PHI := Φ := λp.PAIR (SND p) (SUCC (SND p))')
 // const PHI = oldPair => PAIR(getRight(oldPair))(SUCC(getRight(oldPair)))
 
 // const examplePair0 = V(Fls)(zero) 
-// //list prepend(one)(prepend(zero)(nil))
+
 // const examplePair4 = V(Fls)(four)
-// //list //prepend(five)(prepend(four)(nil))
 
 // demo('Φ <False, 0> = <0, 1>',
 //   toNumber( getLeft(PHI(examplePair0)) ) === 0 &&
